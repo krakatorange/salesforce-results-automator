@@ -3,6 +3,12 @@ import mechanize
 import xlrd
 import xlwt
 import os
+import time
+
+#=========================================================
+# Start Timer
+#=========================================================
+start = time.time()
 
 #=========================================================
 # Execute SQL Analyzer script and save to .xls file
@@ -41,27 +47,25 @@ print "Element at cell B2 is ", foreign_ip # example get specific cell
 #=========================================================
 # Search results by ID between 24 hrs and MAX hrs
 #=========================================================
-url = "http://duckduckgo.com/html"
+url = "https://pypi.python.org/pypi/simple-salesforce"
 br = mechanize.Browser()
 br.set_handle_robots(False) # ignore robots
 
 # for loop for every record in results
-for rx in range(4, sh.nrows):
+for rx in range(4, 8):
 	br.open(url)
-	br.select_form(name="x")
-	br["q"] = sh.cell_value(rowx=rx, colx=2)
+	br.select_form(name="searchform")
+	br["term"] = sh.cell_value(rowx=rx, colx=2)
+	print br["term"]
 	res = br.submit()
 	content = res.read()
-	with open("results.html", "w") as f:
+	with open("results" + str(rx) + ".html", "w") as f:
 		f.write(content)
-	webbrowser.open("results.html")
+	webbrowser.open("results" + str(rx) + ".html")
 # end for loop
-
+	
 #=========================================================
-# Clean up
+# End Timer
 #=========================================================
-# filelist = [ f for f in os.listdir(".") if f.endswith(".xls")
-										# || f.endswith(".txt")
-									    # || f.endswith(".html") ]
-# for f in filelist:
-    # os.remove(f)
+end = time.time()
+print(end - start)
