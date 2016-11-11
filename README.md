@@ -1,4 +1,5 @@
 SalesForce Results Automator
+-------------------------------------
 
 test.py - The controller
 
