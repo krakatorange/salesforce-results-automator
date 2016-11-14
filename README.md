@@ -1,7 +1,7 @@
 SalesForce Results Automator
 -------------------------------------
 
-test.py - The controller
+main.py - The controller
 
 This script displays the status of all results for tickets older than 24 hours. Executing this script submits search queries by ticket ID number through prometric.my.salesforce.com using the salesforce RESTful API. The final results are opened in your default web browser in individual tabs.
 
@@ -11,4 +11,4 @@ This script goes through 4 primary phases:
   3. The API responses with a JSON format of the search results with the ticket status information and ticket URL.
   4. The URL is opened in the default web browser for every ticket ID that is passed through the API and responds successfully.
 
-To use this script; download this repo, unzip it, and launch "test.py".
+To use this script; download this repo, unzip it, and launch "main.py".
