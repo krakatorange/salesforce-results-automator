@@ -1,7 +1,8 @@
 SalesForce Results Automator
 -------------------------------------
 
-main.py - The controller
+main.py - The main controller
+re.py - The temporary folder clean up utility
 
 This script displays the status of all results for tickets older than 24 hours. Executing this script submits search queries by ticket ID number through prometric.my.salesforce.com using the salesforce RESTful API. The final results are opened in your default web browser in individual tabs.
 
