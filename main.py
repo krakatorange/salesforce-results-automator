@@ -2,8 +2,8 @@ import webbrowser
 import mechanize
 import xlrd
 import xlwt
-import os
 import time
+import os
 
 #=========================================================
 # Start Timer
@@ -39,7 +39,7 @@ print "The number of worksheets is", book.nsheets # test sheets
 print "Worksheet name(s):", book.sheet_names() # test sheet names
 sh = book.sheet_by_index(0)
 print sh.name, sh.nrows, sh.ncols
-foreign_ip = sh.cell_value(rowx=4, colx=2)
+foreign_ip = sh.cell_value(rowx = 4, colx = 2)
 print "Element at cell B2 is ", foreign_ip # example get specific cell
 # for rx in range(sh.nrows):
 	# print sh.row(rx)
@@ -54,14 +54,15 @@ br.set_handle_robots(False) # ignore robots
 # for loop for every record in results
 for rx in range(4, 8):
 	br.open(url)
-	br.select_form(name="searchform")
-	br["term"] = sh.cell_value(rowx=rx, colx=2)
+	br.select_form(name = "searchform")
+	br["term"] = sh.cell_value(rowx = rx, colx = 2)
 	print br["term"]
 	res = br.submit()
 	content = res.read()
-	with open("results" + str(rx) + ".html", "w") as f:
+	modcount = rx - 3
+	with open("results" + str(modcount) + ".html", "w") as f:
 		f.write(content)
-	webbrowser.open("results" + str(rx) + ".html")
+	webbrowser.open("results" + str(modcount) + ".html")
 # end for loop
 	
 #=========================================================
