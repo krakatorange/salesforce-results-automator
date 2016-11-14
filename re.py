@@ -1,7 +1,7 @@
 import os
 
 #=========================================================
-# Clean up
+# Clean up - Remove all files with misc extensions
 #=========================================================
 filelist = [ f for f in os.listdir(".") if f.endswith(".xls") ]
 for f in filelist:
