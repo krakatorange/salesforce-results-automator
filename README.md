@@ -43,4 +43,4 @@ Tips:
 
 	1. Make sure you don't name any other files in your pre-build folder the same as
 	   the names of dependencies in the build folder or you will error out.
-	2. Make sure you have all the correct modules installed and imported in your script
+	2. Make sure you have all the correct modules installed and imported in your script.
