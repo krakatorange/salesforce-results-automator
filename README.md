@@ -37,7 +37,7 @@ Run as executable:
 	6. Run "python setup.py py2exe" to build the distribution
 	7. Go into the newly created dist directory and run "main.exe"
 	8. You can now move the "dist" folder to any location you like (windows machines only)
-     and run the application by double clicking on main.exe in the folder.
+     	   and run the application by double clicking on main.exe in the folder.
 
 Tips:
 
