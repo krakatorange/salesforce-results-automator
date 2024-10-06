@@ -1,4 +1,4 @@
-SalesForce Results Automator
+Salesforce Results Automator
 -------------------------------------
 
 - main.py: The main controller
